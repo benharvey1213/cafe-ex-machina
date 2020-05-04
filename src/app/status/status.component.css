@@ -1,6 +1,6 @@
 .container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #status {
@@ -19,8 +19,18 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
+    line-height: 100px;
 }
 
 .check {
-    border: none;
+    font-size: 2em;
+}
+
+h5 {
+    margin-top: 20px;
+}
+
+.glyphicon {
+    width: 100px;
+    height: 100px;
 }

@@ -6,18 +6,28 @@
         <div class="row">
             <div class="col">
                 <div class="circle">
-                    <div class="check">✔</div>
+                    <div *ngIf="phase >= 1" class="check">✔</div>
                 </div>
                 Recieved
             </div>
             <div class="col">
-                <div class="circle"></div>
+                <div class="circle">
+                    <div *ngIf="phase >= 2" class="check">✔</div>
+                </div>
                 Cooking
             </div>
             <div class="col">
-                <div class="circle"></div>
+                <div class="circle">
+                    <div *ngIf="phase >= 3" class="check">✔</div>
+                </div>
                 Order Ready
             </div>
         </div>
     </div>
+
+    <h5 *ngIf="phase == 0">Order not yet recieved</h5>
+    <h5 *ngIf="phase == 1">Order recieved, preparing to cook</h5>
+    <h5 *ngIf="phase == 2">Order cooked, preparing to serve</h5>
+    <h5 *ngIf="phase == 3">Order ready for pick-up</h5>
+
 </div>

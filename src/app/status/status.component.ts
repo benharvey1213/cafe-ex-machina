@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
+  phase : number = 3;
+
   constructor() { }
 
   ngOnInit(): void {
