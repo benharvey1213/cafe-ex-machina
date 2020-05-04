@@ -1,0 +1,46 @@
+<div id="all" class="container">
+    <h1>Choose a Payment Method</h1>
+    <div id="methods">
+
+        <div (click)="card()" class="method" id="card">
+            <h5>Pay With Card</h5>
+        </div>
+
+        <div (click)="cash()" class="method" id="cash">
+            <h5>Pay With Cash</h5>
+        </div>
+
+    </div>
+
+    <div *ngIf="currentSelection == 0">
+        <h6>No payment method selected</h6>
+    </div>
+
+    <div *ngIf="currentSelection != 0">
+        <div *ngIf="currentSelection == 1">
+            <div class="input-group mb-3">
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="cardNumber" type="tel" maxlength="16" class="form-control" placeholder="Card Number" aria-label="Card Number" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="expirationDate" type="date" class="form-control" placeholder="Expiration Date" aria-label="Expiration Date" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="securityCode" type="tel" maxlength="4" class="form-control" placeholder="Security Code" aria-label="Security Code" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input [(ngModel)]="billingAddress" type="text" class="form-control" placeholder="Billing Address" aria-label="Billing Address" aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+        <h4 *ngIf="currentSelection == 2">Please pay at counter</h4>
+
+        <h5 style="color: red;" *ngIf="error">Card information incomplete</h5>
+
+        <button id="continue" class="btn btn-dark" (click)="continue()">Continue</button>
+    </div>
+
+
+</div>
