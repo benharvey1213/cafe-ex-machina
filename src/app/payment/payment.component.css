@@ -4,7 +4,7 @@ h1 {
 }
 
 #methods {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
     display: inline-block;
 }
@@ -17,6 +17,11 @@ h1 {
     height: 150px;
     width: 300px;
     margin: 10px;
+    transition: height 0.3s ease;
+}
+
+.small {
+    height: 75px;
 }
 
 .method:hover {
@@ -25,16 +30,21 @@ h1 {
 }
 
 #card {
-    background-color: rgb(65, 65, 65);
+    background-color: #FD8D8D
 }
 
 #cash {
-    background-color: rgb(56, 175, 76);
+    background-color: rgb(141, 253, 141);
 }
 
 h5 {
     font-size: 1.4em;
-    margin-top: 55px;
+    margin-top: 60px;
+    transition: margin-top 0.3s ease;
+}
+
+.smallText {
+    margin-top: 26px;
 }
 
 #all {
@@ -43,4 +53,15 @@ h5 {
 
 #continue {
     margin-top: 30px;
+}
+
+#form {
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#error {
+    margin-top: 35px;
 }

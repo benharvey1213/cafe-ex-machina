@@ -7,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  phase : number = 3;
+  phase : number = 0;
+
+  timeLeft : number = 5;
+  interval;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0){
+        this.timeLeft--;
+      } else {
+        if (this.phase < 3){
+          this.phase++;
+        } else {
+          this.interval = clearInterval()
+        }
+        this.timeLeft = 5;
+      }
+    }, 1000);
   }
 
 }
