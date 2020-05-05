@@ -1,14 +1,17 @@
 .mat-card-title
 {
-    margin-left: 100px;
-    margin-right: 100px;
+    justify-content: center;
+}
+
+.mat-grid-tile
+{
+    background-color: bisque;
 }
 
 .mat-card
 {
     width: 400px;
     height: 375px;
-    background-color: aquamarine;
 }
 
 .mat-grid-list
@@ -16,4 +19,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
 }
