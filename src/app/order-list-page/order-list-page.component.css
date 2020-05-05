@@ -1,0 +1,15 @@
+.moneyCol {
+    text-align: right;
+}
+.orderTable {
+    border-style: thin;
+}
+.totalRows {
+text-align: right;
+}
+.break {
+    border-top-style: solid;
+}
+tr, td{
+    border: solid;
+}
