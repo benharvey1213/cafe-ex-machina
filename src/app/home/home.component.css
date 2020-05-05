@@ -5,7 +5,12 @@
 
 .mat-grid-tile
 {
-    background-color: bisque;
+    background-color: white;
+}
+
+.mat-card:hover
+{
+    background-color: whitesmoke;
 }
 
 .mat-card
@@ -16,8 +21,5 @@
 
 .mat-grid-list
 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin: auto;
 }
