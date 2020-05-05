@@ -11,7 +11,7 @@ import { StatusComponent } from './status/status.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OrderListPageComponent
+    OrderListPageComponent,
     PaymentComponent,
     StatusComponent
   ],
