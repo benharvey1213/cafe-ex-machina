@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaymentComponent } from './payment/payment.component';
 import { StatusComponent } from './status/status.component';
 import { OrderListPageComponent } from './order-list-page/order-list-page.component';
-
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
+  {path: 'category', component: CategoryComponent},
   {path: 'order-list', component: OrderListPageComponent},
   {path: 'payment', component: PaymentComponent},
   {path: 'status', component: StatusComponent},
