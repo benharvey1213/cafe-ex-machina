@@ -9,6 +9,8 @@ export class StatusComponent implements OnInit {
 
   phase : number = 0;
 
+  ellipse : string = '';
+
   timeLeft : number = 5;
   interval;
 
@@ -18,6 +20,13 @@ export class StatusComponent implements OnInit {
     this.interval = setInterval(() => {
       if (this.timeLeft > 0){
         this.timeLeft--;
+
+        if (this.ellipse != '...'){
+          this.ellipse += '.'
+        } else {
+          this.ellipse = ''
+        }
+
       } else {
         if (this.phase < 3){
           this.phase++;
@@ -25,6 +34,7 @@ export class StatusComponent implements OnInit {
           this.interval = clearInterval()
         }
         this.timeLeft = 5;
+        this.ellipse = ''
       }
     }, 1000);
   }
