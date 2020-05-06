@@ -1,0 +1,73 @@
+.Header{
+    text-align:center;
+    
+}
+.hz{
+    width:17%;
+    margin: 50px;
+    
+
+    
+}
+.header2{
+    margin:50px;
+    
+}
+.page {
+    width: 1000px;
+  border: 5px solid black;
+  padding: 50px;
+  margin: 50px;
+  height:500px;
+}
+.box1{
+    width: 800px;
+    border: 5px solid black;
+    padding: 50px;
+    margin: 10px;
+    height:50px;
+  }
+
+.box2{
+    width: 800px;
+    border: 5px solid black;
+    padding: 50px;
+    margin: 10px;
+    height:50px;
+  }
+
+.box3{
+    width: 800px;
+    border: 5px solid black;
+    padding: 50px;
+    margin: 10px;
+    height:50px;
+  }
+
+.pic1{
+    width: 80px;
+    border: 5px solid black;
+    height:50px;
+}
+.pic2{
+    width: 80px;
+    border: 5px solid black;
+    height:50px;
+}
+.pic3{
+    width: 80px;
+    border: 5px solid black;
+    height:50px;
+}
+#p1{
+    text-align:center;
+    margin:-30px;
+}
+#p2{
+    text-align:center;
+    margin:-30px;
+}
+#p3{
+    text-align:center;
+    margin:-30px;
+}
