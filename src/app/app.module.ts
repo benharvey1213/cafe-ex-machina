@@ -4,6 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { HomeComponent } from './home/home.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 import { FoodDescComponent } from './food-desc/food-desc.component';
 import { CategoryComponent } from './category/category.component';
 import { OrderListPageComponent } from './order-list-page/order-list-page.component';
@@ -13,6 +19,7 @@ import { StatusComponent } from './status/status.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     FoodDescComponent,
     CategoryComponent,
     OrderListPageComponent,
@@ -22,6 +29,9 @@ import { StatusComponent } from './status/status.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatCardModule,
+    MatGridListModule,
+    NoopAnimationsModule
     FormsModule,
   ],
   providers: [],

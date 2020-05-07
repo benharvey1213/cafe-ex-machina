@@ -1,0 +1,25 @@
+.mat-card-title
+{
+    justify-content: center;
+}
+
+.mat-grid-tile
+{
+    background-color: white;
+}
+
+.mat-card:hover
+{
+    background-color: whitesmoke;
+}
+
+.mat-card
+{
+    width: 400px;
+    height: 375px;
+}
+
+.mat-grid-list
+{
+    margin: auto;
+}
