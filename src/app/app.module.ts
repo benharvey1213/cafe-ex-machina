@@ -33,7 +33,7 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     MatCardModule,
     MatGridListModule,
-    NoopAnimationsModule,
+    NoopAnimationsModule
     FormsModule,
   ],
   providers: [],
