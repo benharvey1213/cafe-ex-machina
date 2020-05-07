@@ -48,6 +48,9 @@ export class DataInteractionService {
     );
     this.currentShoppingCart = tempArray1.concat(tempArray2);
   }
+  AddToCart(product : Product): void{ //add currently viewed item to the cart, called in food-desc
+    this.currentShoppingCart.push(product)
+  }
 
   constructor() {}
 }
