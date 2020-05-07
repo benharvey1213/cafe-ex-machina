@@ -1,25 +1,20 @@
-.mat-card-title
-{
+.mat-card-title {
     justify-content: center;
 }
 
-.mat-grid-tile
-{
+.mat-grid-tile {
     background-color: white;
 }
 
-.mat-card:hover
-{
+.mat-card:hover {
     background-color: whitesmoke;
 }
 
-.mat-card
-{
+.mat-card {
     width: 400px;
     height: 375px;
 }
 
-.mat-grid-list
-{
+.mat-grid-list {
     margin: auto;
 }
