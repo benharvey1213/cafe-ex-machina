@@ -12,6 +12,10 @@ export class DataInteractionService {
 
   currentShoppingCart : Product[];
 
+  categories : string[
+    
+  ];
+
   constructor() { }
 
   
