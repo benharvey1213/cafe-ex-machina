@@ -15,6 +15,7 @@ import { CategoryComponent } from './category/category.component';
 import { OrderListPageComponent } from './order-list-page/order-list-page.component';
 import { PaymentComponent } from './payment/payment.component';
 import { StatusComponent } from './status/status.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +25,15 @@ import { StatusComponent } from './status/status.component';
     CategoryComponent,
     OrderListPageComponent,
     PaymentComponent,
-    StatusComponent
+    StatusComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     MatGridListModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
     FormsModule,
   ],
   providers: [],
