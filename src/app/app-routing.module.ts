@@ -4,8 +4,10 @@ import { PaymentComponent } from './payment/payment.component';
 import { StatusComponent } from './status/status.component';
 import { OrderListPageComponent } from './order-list-page/order-list-page.component';
 import { CategoryComponent } from './category/category.component';
+import { FoodDescComponent } from './food-desc/food-desc.component';
 
 const routes: Routes = [
+  {path: 'food-description', component: FoodDescComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'order-list', component: OrderListPageComponent},
   {path: 'payment', component: PaymentComponent},
