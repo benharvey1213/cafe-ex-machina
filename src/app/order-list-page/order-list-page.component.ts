@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataInteractionService } from '../data-interaction.service';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-order-list-page',
@@ -6,23 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-list-page.component.css']
 })
 export class OrderListPageComponent implements OnInit {
-  headers = ["Name", "Price"];
-  rows = [
-    {
-      "Name": "Red Bean Soup",
-      "Price": 10.50
-    },
-    {
-      "Name": "black coffee",
-      "Price": 9.5
-    },
-    {
-      "Name": "surgar cookie",
-      "Price": 5
-    }];
-  constructor() { }
-
+  items: Product[];
+  subTotal: number;
+  tax: number;
+  total:number;
+  
+  
+  constructor(private DataInteractionService: DataInteractionService) { }
+  
   ngOnInit(): void {
+    this.items = this.DataInteractionService.getCart();
+    this.subTotal = this.DataInteractionService.getSubTotal();
+    this.tax = this.DataInteractionService.getTax();
+    this.total = this.DataInteractionService.getTotal();
+  }
+
+  remove(index: number){
+    this.DataInteractionService.removeItem(index);
+    this.ngOnInit();
   }
 
 }

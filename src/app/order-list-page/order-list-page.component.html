@@ -1,37 +1,49 @@
-
-<table class="orderTable">
+<div class="table">
+  <table class="orderTable">
     <tr>
-        <th colspan="3">Please Confirm Your Order</th>
+      <th id="head" colspan="3">Please Confirm Your Order</th>
     </tr>
     <tr>
-        <th *ngFor="let column of headers">
-            {{column}}
-        </th>
-    </tr>
-    <tr>
-    <tr *ngFor="let row of rows">
-        <td *ngFor="let column of headers">
-            {{row[column]}}
-        </td>
+      <th id="itemHeader">
+        Item
+      </th>
+      <th id="priceHeader">
+        Price
+      </th>
     </tr>
 
-    <tr>
-        <td colspan="3" class="break"> </td>
+    <tr class="item" *ngFor="let item of items; let i = index">
+      <td id="item">
+        {{item.name}}
+      </td>
+      <td class="moneyCol">
+        {{item.price | currency}}
+      </td>
+      <td class="removeBtn" ><button (click)="remove(i)">Remove</button></td>
+    </tr>
 
+   
+
+    <tr>
+      <td colspan="3" class="break"></td>
+    </tr>
+
+    <tr>
+      <td class="totalRows">Subtotal:</td>
+      <td class="moneyCol">{{subTotal |currency}}</td>
     </tr>
     <tr>
-
-        <td class="totalRows">Subtotal:</td>
-        <td class="moneyCol">$XX.XX</td>
+      <td class="totalRows">Tax:</td>
+      <td class="moneyCol">{{tax| currency}}</td>
     </tr>
+
+    <tr class="bottom">
+      <td class="totalRows">Total<br /></td>
+      <td class="moneyCol">{{total| currency}}</td>
+    </tr>
+
     <tr>
-
-        <td class="totalRows">Tax:</td>
-        <td class="moneyCol">$X.XX</td>
+      <td id="confirmButton" colspan="2"><button>Confirm</button></td>
     </tr>
-    <tr>
-
-        <td class="totalRows">Total<br></td>
-        <td class="moneyCol">$X.XX</td>
-    </tr>
-</table>
+  </table>
+</div>
