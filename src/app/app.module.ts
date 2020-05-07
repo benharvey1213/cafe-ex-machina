@@ -31,7 +31,7 @@ import { StatusComponent } from './status/status.component';
     AppRoutingModule,
     MatCardModule,
     MatGridListModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
     FormsModule,
   ],
   providers: [],
