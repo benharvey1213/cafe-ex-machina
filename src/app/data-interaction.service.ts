@@ -11,6 +11,7 @@ export class DataInteractionService {
   ];
 
   currentShoppingCart : Product[];
+  currentTotal : number = 0;
 
   constructor() { }
 
