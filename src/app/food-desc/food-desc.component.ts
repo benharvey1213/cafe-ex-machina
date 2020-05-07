@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {DataInteractionService} from '../data-interaction.service';
+import {Product} from '../product'
+
 
 @Component({
   selector: 'app-food-desc',
@@ -8,9 +10,21 @@ import {DataInteractionService} from '../data-interaction.service';
 })
 export class FoodDescComponent implements OnInit {
 
-  constructor() { }
+  @Input() product: Product;
+
+  constructor(private dataService: DataInteractionService) { }
 
   ngOnInit(): void {
+
+  }
+
+  
+  getProduct(): void{
+    
+  }
+
+  AddToOrder(product : Product): void{
+    this.dataService.AddToCart(product)
   }
 
 }

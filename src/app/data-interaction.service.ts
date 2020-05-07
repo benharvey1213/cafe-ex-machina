@@ -26,6 +26,10 @@ export class DataInteractionService {
     return this.currentShoppingCart;
   }
 
+  AddToCart(product : Product): void{ //add currently viewed item to the cart, called in food-desc
+    this.currentShoppingCart.push(product)
+  }
+
   constructor() { }
 
   
