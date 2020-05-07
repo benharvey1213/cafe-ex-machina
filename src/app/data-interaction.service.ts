@@ -6,8 +6,12 @@ import { Product } from './product';
 })
 export class DataInteractionService {
 
-  inventoryList : Product[
+  // https://www.breadandcie.com/the-cafe/cafemenupage/
+  // pullin crap off this random website (Ben)
+  // we also need a definitive list of categories so we're consistent with the category field
 
+  inventoryList : Product[] = [
+    new Product('Breakfast Pizza', 12, 'Including eggs, bacon, parmesan cheese and green onion on top of our House-made Pizza Bread', 'categoryName??', ''),
   ];
 
   currentShoppingCart : Product[];
