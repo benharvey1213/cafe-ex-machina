@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataInteractionService } from '../data-interaction.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,14 @@ export class HeaderComponent implements OnInit {
 
   curTotal : number;
 
-  constructor(private dataInteractionService : DataInteractionService) { }
+  constructor(private router : Router, private dataInteractionService : DataInteractionService) { }
 
   ngOnInit(): void {
     this.curTotal = this.dataInteractionService.currentTotal;
+  }
+
+  cart(){
+    this.router.navigateByUrl('order-list')
   }
 
 }

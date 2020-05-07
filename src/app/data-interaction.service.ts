@@ -8,6 +8,10 @@ import { MENU } from './mock-menu'
 export class DataInteractionService {
   menu = MENU;
 
+  // https://www.breadandcie.com/the-cafe/cafemenupage/
+  // pullin crap off this random website (Ben)
+  // we also need a definitive list of categories so we're consistent with the category field
+
   currentShoppingCart : Product[];
   currentTotal : number = 0;
 
