@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataInteractionService} from '../data-interaction.service';
 
 @Component({
   selector: 'app-food-desc',

@@ -13,7 +13,7 @@ export class DataInteractionService {
   // we also need a definitive list of categories so we're consistent with the category field
 
   currentShoppingCart : Product[];
-  currentTotal : number = 0;
+  currentTotal : number = 0; 
 
   getTotal(): number{
     let total = 0;
