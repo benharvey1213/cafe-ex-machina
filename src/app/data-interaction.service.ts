@@ -12,7 +12,7 @@ export class DataInteractionService {
   // pullin crap off this random website (Ben)
   // we also need a definitive list of categories so we're consistent with the category field
 
-  currentShoppingCart: Product[];
+  currentShoppingCart: Product[] = [];
   currentTotal: number = 0;
   currentSubTotal:number = 0;
   currentTax: number = .07;

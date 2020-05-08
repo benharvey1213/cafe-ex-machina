@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataInteractionService } from '../data-interaction.service';
 
 
 @Component({
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  total : number;
+
+  constructor(private data : DataInteractionService) { }
 
   ngOnInit(): void {
+    this.total = this.data.getSubTotal();
   }
 
 }
