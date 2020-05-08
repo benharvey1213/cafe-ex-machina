@@ -9,14 +9,19 @@ import { DataInteractionService } from '../data-interaction.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  products : Product[];
+  products : Product[] = MENU;
 
   total : number;
 
   constructor(private data : DataInteractionService) { }
 
   ngOnInit(): void {
-    this.products=MENU
+    // this.products=MENU
+    this.total = this.data.getSubTotal();
+  }
+
+  add(product){
+    this.data.AddToCart(product)
     this.total = this.data.getSubTotal();
   }
 
