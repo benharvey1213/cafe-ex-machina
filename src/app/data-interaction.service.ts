@@ -14,23 +14,28 @@ export class DataInteractionService {
 
   currentShoppingCart: Product[];
   currentTotal: number = 0;
+  currentSubTotal:number = 0;
+  currentTax: number = .07;
   
 
   getSubTotal(): number {
     let subTotal = 0;
     for (let i = 0; i < this.currentShoppingCart.length; i++)
     subTotal += this.currentShoppingCart[i].price;
+    this.currentSubTotal = subTotal
     return subTotal; //TODO: format total as a $ amount will return a string instead of number
   }
 
   getTax(): number{
     let tax: number= 0.07;
     let subTotal : number = this.getSubTotal();
+    this.currentTax = subTotal * tax;
     return subTotal * tax;
   }
 
-  getTotal(): number{
-    return this.getSubTotal()+ this.getTax();
+  getTotal(){
+    this.currentTotal = this.getSubTotal() + this.getTax();
+    return this.getSubTotal() + this.getTax();
   }
 
   getCart(): Product[] {
@@ -48,8 +53,10 @@ export class DataInteractionService {
     );
     this.currentShoppingCart = tempArray1.concat(tempArray2);
   }
+
   AddToCart(product : Product): void{ //add currently viewed item to the cart, called in food-desc
-    this.currentShoppingCart.push(product)
+    this.currentShoppingCart.push(product);
+    this.getTotal();
   }
 
   constructor() {}
