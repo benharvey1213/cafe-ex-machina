@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {DataInteractionService} from '../data-interaction.service';
 import {Product} from '../product'
+import { EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {Product} from '../product'
 export class FoodDescComponent implements OnInit {
 
   @Input() product: Product;
+  @Output() addToCart = new EventEmitter<Product>();
 
   constructor(private dataService: DataInteractionService) { }
 
@@ -24,7 +26,7 @@ export class FoodDescComponent implements OnInit {
   }
 
   AddToOrder(product : Product): void{
-    this.dataService.AddToCart(product)
+    this.addToCart.emit(product)
   }
 
 }
