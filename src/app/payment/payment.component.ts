@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataInteractionService } from '../data-interaction.service';
 
 @Component({
   selector: 'app-payment',
@@ -16,12 +17,15 @@ export class PaymentComponent implements OnInit {
   securityCode : number;
   billingAddress : string;
 
+  total : number;
+
   error : boolean = false;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private data : DataInteractionService) { }
 
   ngOnInit(): void {
     this.currentSelection = 0;
+    this.total = this.data.getTotal();
   }
 
   card(){
@@ -35,7 +39,7 @@ export class PaymentComponent implements OnInit {
   continue(){
     if (this.currentSelection == 1){
       if (this.name != '' && this.cardNumber != null && this.expirationDate != null && this.securityCode != null && this.billingAddress != ''){
-        // interact with service
+        this.data.clearOrder();
         this.router.navigateByUrl('status');
       } else {
         this.error = true;
@@ -44,7 +48,7 @@ export class PaymentComponent implements OnInit {
 
       
     } else {
-      // interact with service
+      this.data.clearOrder();
       this.router.navigateByUrl('status');
     }
   }

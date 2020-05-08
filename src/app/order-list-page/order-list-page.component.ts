@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataInteractionService } from '../data-interaction.service';
 import { Product } from '../product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-list-page',
@@ -14,12 +15,13 @@ export class OrderListPageComponent implements OnInit {
   total:number;
   
   
-  constructor(private DataInteractionService: DataInteractionService) { }
+  constructor(private router : Router, private DataInteractionService: DataInteractionService) { }
   
   ngOnInit(): void {
     this.items = this.DataInteractionService.getCart();
     this.subTotal = this.DataInteractionService.getSubTotal();
     this.tax = this.DataInteractionService.getTax();
+    
     this.total = this.DataInteractionService.getTotal();
   }
 
@@ -27,5 +29,15 @@ export class OrderListPageComponent implements OnInit {
     this.DataInteractionService.removeItem(index);
     this.ngOnInit();
   }
+
+  payment(){
+    this.router.navigateByUrl('payment')
+  }
+//This is just a test to se how my page handles removing things
+  // add(){
+  //   for(let i = 0;i < this.DataInteractionService.menu.length; i++)
+  //   this.DataInteractionService.AddToCart(this.DataInteractionService.menu[i]);
+  //   this.ngOnInit();
+  // }
 
 }

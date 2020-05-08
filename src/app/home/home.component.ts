@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataInteractionService } from '../data-interaction.service';
+import { MENU } from '../mock-menu'
 
 
 @Component({
@@ -8,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  total : number;
+
+  constructor(private dataService : DataInteractionService, private router: Router) { }
+
+  categorySelector(category){
+    this.dataService.setCategory(category);
+    this.router.navigateByUrl('category')
+  }
 
   ngOnInit(): void {
+    this.total = this.dataService.getSubTotal();
   }
 
 }

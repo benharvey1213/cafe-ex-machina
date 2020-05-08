@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataInteractionService } from '../data-interaction.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,16 +8,20 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  curTotal : number;
+  @Input() total : number;
+  @Input() disabled : boolean = false;
 
-  constructor(private router : Router, private dataInteractionService : DataInteractionService) { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
-    this.curTotal = this.dataInteractionService.currentTotal;
+
   }
 
   cart(){
-    this.router.navigateByUrl('order-list')
+    if (!this.disabled){
+      this.router.navigateByUrl('order-list')
+    }
+    
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataInteractionService } from '../data-interaction.service';
 
 @Component({
   selector: 'app-status',
@@ -14,9 +15,12 @@ export class StatusComponent implements OnInit {
   timeLeft : number = 5;
   interval;
 
-  constructor() { }
+  total : number;
+
+  constructor(private data : DataInteractionService) { }
 
   ngOnInit(): void {
+    this.total = this.data.getTotal();
     this.interval = setInterval(() => {
       if (this.timeLeft > 0){
         this.timeLeft--;

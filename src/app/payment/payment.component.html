@@ -1,3 +1,5 @@
+<app-header [total]="total"></app-header>
+
 <div id="all" class="container">
     <h1>Choose a Payment Method</h1>
     <div id="methods">
@@ -37,7 +39,7 @@
 
         <h4 *ngIf="currentSelection == 2">Please pay at the counter</h4>
 
-        <h5 id="error" style="color: red;" *ngIf="error">Card information incomplete</h5>
+        <h5 id="error" style="color: red;" *ngIf="error && currentSelection == 1">Card information incomplete</h5>
 
         <button id="continue" class="btn btn-dark" (click)="continue()">Continue</button>
     </div>

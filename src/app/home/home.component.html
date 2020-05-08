@@ -1,12 +1,14 @@
+<app-header [total]="total"></app-header>
+
 <div>
     <h2 style="text-align:center" routerLink="placeholder">Cafe Ex Machina</h2>
 
     <mat-grid-list cols="2" rowHeight="575px">
 
         <mat-grid-tile>
-            <mat-card>
+            <mat-card (click)="categorySelector('breakfast')">
                 <mat-card-title>Breakfast</mat-card-title><br>
-                <mat-card-subtitle routerLink="placeholder">only available from 7:00am - 11:30am</mat-card-subtitle>
+                <mat-card-subtitle>only available from 7:00am - 11:30am</mat-card-subtitle>
                 <img mat-card-image src="assets/images/breakfast.jpg" alt="breakfast items" height="316" width="316">
                 <mat-card-content>
                     lorem ipsum dolor
@@ -15,9 +17,9 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <mat-card>
+            <mat-card (click)="categorySelector('panini')">
                 <mat-card-title>Paninis</mat-card-title><br>
-                <mat-card-subtitle routerLink="placeholder">only available after breakfast (11:30am)</mat-card-subtitle>
+                <mat-card-subtitle>only available after breakfast (11:30am)</mat-card-subtitle>
                 <img mat-card-image src="assets/images/panini.jpg" alt="hot sandwiches" height="316" width="316">
                 <mat-card-content>
                     lorem ipsum dolor
@@ -30,9 +32,9 @@
     <mat-grid-list cols="1" rowHeight="575px">
 
         <mat-grid-tile>
-            <mat-card>
+            <mat-card (click)="categorySelector('cafe drink')">
                 <mat-card-title>Cafe Drinks</mat-card-title><br>
-                <mat-card-subtitle routerLink="placeholder">available all day</mat-card-subtitle>
+                <mat-card-subtitle>available all day</mat-card-subtitle>
                 <img mat-card-image src="assets/images/coffee.JPG" alt="cafe items" height="316" width="316">
                 <mat-card-content>
                     lorem ipsum dolor
