@@ -15,16 +15,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService : DataInteractionService, private router: Router) { }
 
-  categorySelector(category: number){
-    let categoryActual: string;
-    if(category === 1)
-      categoryActual = 'breakfast';
-    else if(category === 2)
-      categoryActual = 'panini';
-    else if(category === 3)
-      categoryActual = 'cafe drink';
-    this.dataService.currentCategory = categoryActual;
-    this.router.navigateByUrl(this.dataService.currentCategory)
+  categorySelector(){
+    this.router.navigateByUrl('category')
   }
 
   ngOnInit(): void {
