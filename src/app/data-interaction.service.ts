@@ -32,11 +32,25 @@ export class DataInteractionService {
     }
   }
 
+  clearOrder(){
+    this.currentShoppingCart = [];
+    this.updateCookies();
+  }
+
+  setCategory(category){
+    this.currentCategory = category;
+    this.updateCookies();
+  }
+
   getCurrentCategory(){
+    if (this.cookies.get('category') != ''){
+      this.currentCategory = this.cookies.get('category');
+    }
     return this.currentCategory;
   }
 
   getMenuFromCategory(){
+    this.getCurrentCategory();
     var menu = [];
     
     this.menu.forEach(item => {
@@ -94,6 +108,7 @@ export class DataInteractionService {
 
   updateCookies(){
     this.cookies.set('cart', JSON.stringify(this.currentShoppingCart));
+    this.cookies.set('category', this.currentCategory);
   }
 
   

@@ -39,7 +39,7 @@ export class PaymentComponent implements OnInit {
   continue(){
     if (this.currentSelection == 1){
       if (this.name != '' && this.cardNumber != null && this.expirationDate != null && this.securityCode != null && this.billingAddress != ''){
-        // interact with service
+        this.data.clearOrder();
         this.router.navigateByUrl('status');
       } else {
         this.error = true;
@@ -48,7 +48,7 @@ export class PaymentComponent implements OnInit {
 
       
     } else {
-      // interact with service
+      this.data.clearOrder();
       this.router.navigateByUrl('status');
     }
   }

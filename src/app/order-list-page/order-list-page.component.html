@@ -21,7 +21,7 @@
             <td class="moneyCol">
                 {{item.price | currency}}
             </td>
-            <td class="removeBtn"><button (click)="remove(i)">Remove</button></td>
+            <td class="removeBtn"><button class="btn btn-sm btn-danger" (click)="remove(i)">Remove</button></td>
         </tr>
 
 
@@ -45,7 +45,7 @@
         </tr>
 
         <tr>
-            <td id="confirmBtn" colspan="2"><button (click)="payment()">Confirm</button></td>
+            <td id="confirmBtn" colspan="2"><button class="btn btn-success" (click)="payment()">Confirm</button></td>
         </tr>
     </table>
 </div>

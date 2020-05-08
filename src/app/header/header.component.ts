@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-
   @Input() total : number;
+  @Input() disabled : boolean = false;
 
   constructor(private router : Router) { }
 
@@ -18,7 +18,10 @@ export class HeaderComponent implements OnInit {
   }
 
   cart(){
-    this.router.navigateByUrl('order-list')
+    if (!this.disabled){
+      this.router.navigateByUrl('order-list')
+    }
+    
   }
 
 }

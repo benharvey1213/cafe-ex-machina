@@ -8,6 +8,7 @@
 
 .mat-card:hover {
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 .mat-card {
