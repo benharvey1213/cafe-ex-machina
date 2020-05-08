@@ -12,7 +12,7 @@ export class DataInteractionService {
   // pullin crap off this random website (Ben)
   // we also need a definitive list of categories so we're consistent with the category field
 
-  currentShoppingCart: Product[];
+  currentShoppingCart: Product[] = MENU;
   currentTotal: number = 0;
   
 
@@ -29,8 +29,8 @@ export class DataInteractionService {
     return subTotal * tax;
   }
 
-  getTotal(): number{
-    return this.getSubTotal()+ this.getTax();
+  getTotal(){
+    this.currentTotal = this.getSubTotal() + this.getTax();
   }
 
   getCart(): Product[] {

@@ -10,9 +10,7 @@ td, th{
     border-top: none;
 }
 
-/* tr, td{
-    border: solid;
-} */
+
 
 #priceHeader{
     text-align: right;
@@ -46,4 +44,7 @@ text-align: right;
 
 .break {
     border-top-style: solid;
+}
+#confirmBtn{
+    text-align: right;
 }
