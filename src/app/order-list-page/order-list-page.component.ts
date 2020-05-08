@@ -21,8 +21,8 @@ export class OrderListPageComponent implements OnInit {
     this.items = this.DataInteractionService.getCart();
     this.subTotal = this.DataInteractionService.getSubTotal();
     this.tax = this.DataInteractionService.getTax();
-    this.DataInteractionService.getTotal()
-    this.total = this.DataInteractionService.currentTotal;
+    
+    this.total = this.DataInteractionService.getTotal();
   }
 
   remove(index: number){
@@ -33,5 +33,11 @@ export class OrderListPageComponent implements OnInit {
   payment(){
     this.router.navigateByUrl('payment')
   }
+//This is just a test to se how my page handles removing things
+  // add(){
+  //   for(let i = 0;i < this.DataInteractionService.menu.length; i++)
+  //   this.DataInteractionService.AddToCart(this.DataInteractionService.menu[i]);
+  //   this.ngOnInit();
+  // }
 
 }

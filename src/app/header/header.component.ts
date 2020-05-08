@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router : Router, private dataInteractionService : DataInteractionService) { }
 
   ngOnInit(): void {
-    this.dataInteractionService.getTotal();
+    
     this.curTotal = this.dataInteractionService.currentTotal;
   }
 
