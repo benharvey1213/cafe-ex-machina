@@ -1,50 +1,54 @@
-div.table{
+div.table {
     width: 40%;
     margin-left: auto;
-    margin-right: auto;  
-    margin-top: 5em;  
+    margin-right: auto;
+    margin-top: 5em;
     table-layout: auto;
-    
 }
-td, th{
+
+td,
+th {
     border-top: none;
 }
 
-
-
-#priceHeader{
+#priceHeader {
     text-align: right;
 }
 
-#head{
+#head {
     text-align: center;
 }
 
-#itemHeader{
+#itemHeader {
     text-align: center;
 }
-.orderTable{
+
+.orderTable {
     width: 100%
 }
 
 .moneyCol {
     text-align: right;
-    width:1%;
+    width: 1%;
 }
 
-.removeBtn{
-    width:1%;
+.removeBtn {
+    width: 1%;
     white-space: nowrap;
-    
 }
 
 .totalRows {
-text-align: right;
+    text-align: right;
 }
 
 .break {
     border-top-style: solid;
 }
-#confirmBtn{
+
+#confirmBtn {
     text-align: right;
+}
+
+.removeBtn {
+    margin-bottom: 5px;
 }

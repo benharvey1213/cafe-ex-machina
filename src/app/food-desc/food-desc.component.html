@@ -10,10 +10,10 @@
     </div>
     <div class="row my-2">
         <div class="col ml-5">
-            <h1>{{product.price  | currency}}</h1>
+            <h1>{{product.price | currency}}</h1>
         </div>
         <div class="col">
-            <div class="float-right mr-4"><button (click) = "AddToOrder(product)">Add to Order</button></div>
+            <div class="float-right mr-4"><button class="btn btn-light" (click)="AddToOrder(product)">Add to Order</button></div>
         </div>
     </div>
 </div>
