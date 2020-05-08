@@ -1,23 +1,36 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product";
 import { MENU } from "./mock-menu";
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: "root",
 })
 export class DataInteractionService {
   menu = MENU;
-  
-  // https://www.breadandcie.com/the-cafe/cafemenupage/
-  // pullin crap off this random website (Ben)
-  // we also need a definitive list of categories so we're consistent with the category field
 
   currentCategory: string = "";
   currentShoppingCart: Product[] = [];
   currentTotal: number = 0;
   currentSubTotal:number = 0;
+
+
   currentTax: number = .07;
   
+  constructor(private cookies : CookieService) {
+    // see if we have anything in our cookies
+    let cookieCart = cookies.get('cart');
+
+    // if we do...
+    if (cookieCart != ''){
+      // update the shopping cart from the json
+      this.currentShoppingCart = JSON.parse(cookieCart);
+
+      // update the subtotal and the total
+      this.getSubTotal();
+      this.getTotal();
+    }
+  }
 
   getSubTotal(): number {
     let subTotal = 0;
@@ -53,12 +66,18 @@ export class DataInteractionService {
       this.currentShoppingCart.length + 1
     );
     this.currentShoppingCart = tempArray1.concat(tempArray2);
+    this.updateCookies();
   }
 
   AddToCart(product : Product): void{ //add currently viewed item to the cart, called in food-desc
     this.currentShoppingCart.push(product);
     this.getTotal();
+    this.updateCookies();
   }
 
-  constructor() {}
+  updateCookies(){
+    this.cookies.set('cart', JSON.stringify(this.currentShoppingCart));
+  }
+
+  
 }

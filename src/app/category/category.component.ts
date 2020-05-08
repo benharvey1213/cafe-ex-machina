@@ -16,7 +16,6 @@ export class CategoryComponent implements OnInit {
   constructor(private data : DataInteractionService) { }
 
   ngOnInit(): void {
-    // this.products=MENU
     this.total = this.data.getSubTotal();
   }
 
