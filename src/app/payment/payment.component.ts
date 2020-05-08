@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataInteractionService } from '../data-interaction.service';
 
 @Component({
   selector: 'app-payment',
@@ -16,12 +17,15 @@ export class PaymentComponent implements OnInit {
   securityCode : number;
   billingAddress : string;
 
+  total : number;
+
   error : boolean = false;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private data : DataInteractionService) { }
 
   ngOnInit(): void {
     this.currentSelection = 0;
+    this.total = this.data.getTotal();
   }
 
   card(){

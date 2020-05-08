@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MENU} from '../mock-menu';
 import {Product} from '../product';
+import { DataInteractionService } from '../data-interaction.service';
 
 @Component({
   selector: 'app-category',
@@ -9,10 +10,14 @@ import {Product} from '../product';
 })
 export class CategoryComponent implements OnInit {
   products : Product[];
-  constructor() { }
+
+  total : number;
+
+  constructor(private data : DataInteractionService) { }
 
   ngOnInit(): void {
     this.products=MENU
+    this.total = this.data.getSubTotal();
   }
 
 
