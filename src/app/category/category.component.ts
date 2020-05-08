@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MENU} from '../mock-menu';
+import {Product} from '../product';
 
 @Component({
   selector: 'app-category',
@@ -6,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-
+  products : Product[];
   constructor() { }
 
   ngOnInit(): void {
+    this.products=MENU
   }
+
 
   //------------------------------
   //This Section is From Noah Case
@@ -28,6 +32,7 @@ export class CategoryComponent implements OnInit {
     // 1. Open the food-desc component when a product item card is clicked on / selected
     // 2. Property bind [product] (my object) to your product object when one is selected in the link to my component. 
     //You may do this through defining a selectedProduct object or you may not. IDK. It may look like the line of code above, or it may not. Idk. 
+
 
 
 }
