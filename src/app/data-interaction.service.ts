@@ -32,6 +32,23 @@ export class DataInteractionService {
     }
   }
 
+  getCurrentCategory(){
+    return this.currentCategory;
+  }
+
+  getMenuFromCategory(){
+    var menu = [];
+    
+    this.menu.forEach(item => {
+      if (item.category.toUpperCase() == this.currentCategory.toUpperCase()){
+        menu.push(item);
+      }
+    });
+    
+    return menu;
+    
+  }
+
   getSubTotal(): number {
     let subTotal = 0;
     for (let i = 0; i < this.currentShoppingCart.length; i++)

@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService : DataInteractionService, private router: Router) { }
 
-  categorySelector(){
+  categorySelector(category){
+    this.dataService.currentCategory = category;
     this.router.navigateByUrl('category')
   }
 
