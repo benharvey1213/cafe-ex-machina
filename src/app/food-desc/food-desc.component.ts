@@ -12,6 +12,7 @@ export class FoodDescComponent implements OnInit {
 
   @Input() product: Product;
 
+
   constructor(private dataService: DataInteractionService) { }
 
   ngOnInit(): void {
