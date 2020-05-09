@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataInteractionService } from '../data-interaction.service';
-import { MENU } from '../mock-menu'
-
 
 @Component({
   selector: 'app-home',
@@ -12,6 +10,11 @@ import { MENU } from '../mock-menu'
 export class HomeComponent implements OnInit {
 
   total : number;
+  time : Date;
+
+  showBreakfast : boolean = true;
+  showPanini : boolean = true;
+  showDrinks : boolean = true;
 
   constructor(private dataService : DataInteractionService, private router: Router) { }
 
@@ -22,6 +25,36 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.total = this.dataService.getSubTotal();
+    this.time = new Date();
+    this.determineTimes();
+  }
+
+  determineTimes(){
+    if (this.time.getHours() >= 7 && this.time.getHours() <= 11){
+      this.showBreakfast = true;
+    } else {
+      this.showBreakfast = false;
+    }
+
+    if (this.time.getHours() >= 11 && this.time.getHours() <= 22){
+      this.showPanini = true;
+    } else {
+      this.showPanini = false;
+    }
+
+    if (this.time.getHours() >= 7 && this.time.getHours() <= 22){
+      this.showDrinks = true;
+    } else {
+      this.showDrinks = false;
+    }
+  }
+
+  setDebugTime(){
+    let time = document.getElementById('time').value;
+    let times = time.split(':')
+    this.time.setHours(times[0]);
+    this.time.setMinutes(times[1])
+    this.determineTimes();
   }
 
 }
