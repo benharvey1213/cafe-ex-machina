@@ -50,10 +50,10 @@ export class HomeComponent implements OnInit {
   }
 
   setDebugTime(){
-    let time = document.getElementById('time').value;
+    let time = (document.getElementById('time') as HTMLInputElement).value;
     let times = time.split(':')
-    this.time.setHours(times[0]);
-    this.time.setMinutes(times[1])
+    this.time.setHours(+times[0]);
+    this.time.setMinutes(+times[1])
     this.determineTimes();
   }
 
