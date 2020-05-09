@@ -14,6 +14,7 @@ export class FoodDescComponent implements OnInit {
   @Input() product: Product;
   @Output() addToCart = new EventEmitter<Product>();
 
+
   constructor(private dataService: DataInteractionService) { }
 
   ngOnInit(): void {
