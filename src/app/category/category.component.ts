@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { DataInteractionService } from '../data-interaction.service';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-category',

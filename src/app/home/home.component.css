@@ -19,3 +19,18 @@
 .mat-grid-list {
     margin: auto;
 }
+
+h2 {
+    margin-top: 20px;
+    font-size: 3em;
+}
+
+#debug {
+    margin-top: 40px;
+    padding: 10px;
+}
+
+#nothing {
+    text-align: center;
+    margin-top: 30px;
+}
